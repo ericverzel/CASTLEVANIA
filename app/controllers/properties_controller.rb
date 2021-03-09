@@ -1,6 +1,8 @@
 class PropertiesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
 
   def index
+    @properties = Property.all
   end
 
   def show
@@ -14,7 +16,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-    @property.user_id = current_user.id
+    @property.user_id = current_user
     authorize @property
 
     if @property.save
@@ -34,6 +36,6 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:name, :location, :price, :photo)
+    params.require(:property).permit(:name, :location, :price)
   end
 end
