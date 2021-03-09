@@ -6,36 +6,35 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Property.destroy_all
-Reservation.destroy_all
+User.destroy_all if Rails.env.development?
+Property.destroy_all if Rails.env.development?
+# Reservation.destroy_all
 
-#FAKING USERS
-require 'faker'
-puts 'Creating 30 fake users...'
-30.times do
-  users = User.new(
-    name:  Faker::Name.name,
-    email: Faker::Internet.email,
-    password: "123456"
-  )
-  users.save!
-end
-puts 'Finished!'
+# #FAKING USERS
+# require 'faker'
+# puts 'Creating 30 fake users...'
+# 30.times do
+#   users = User.new(
+#     name:  Faker::Name.name,
+#     email: Faker::Internet.email,
+#     password: "123456"
+#   )
+#   users.save!
+# end
+# puts 'Finished!'
 
 
-#FAKING CASTLES
-=begin
-puts 'Creating 100 fake castles...'
-100.times do
-  properties = Property.new(
-    name:  "Chateau #{Faker::Company.name}",
-    location: Faker::Address.full_address,
-    price: Faker::Number.number(digits: 5),
-    photo: "https://picsum.photos/1400/500",
-    users_id: 3
-  )
-  properties.save!
-end
-puts 'Finished!'
-=end
+# #FAKING CASTLES
+
+# puts 'Creating 100 fake castles...'
+# 100.times do
+#   properties = Property.new(
+#     name:  "Chateau #{Faker::Company.name}",
+#     location: Faker::Address.full_address,
+#     price: Faker::Number.number(digits: 5),
+#     photo: "https://picsum.photos/1400/500",
+#     users_id: 3
+#   )
+#   properties.save!
+# end
+# puts 'Finished!'

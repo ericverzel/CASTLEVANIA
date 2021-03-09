@@ -1,2 +1,9 @@
 <h1>Castlevania Homepage</h1>
 <p>Find the best castles around the world</p>
+
+
+
+
+<% if policy(Property).create? %>
+  <%= link_to "New property", new_property_path %>
+<% end %>
