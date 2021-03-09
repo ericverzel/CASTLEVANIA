@@ -1,4 +1,5 @@
 class PropertiesController < ApplicationController
+  authorize @restaurant
 
     def index
     end
@@ -8,10 +9,14 @@ class PropertiesController < ApplicationController
 
     def new
       @property = Property.new
+      authorize @property
     end
 
     def create
       @property = Property.new(property_params)
+      @property.user = current_user
+      authorize @property
+
       if @property.save
         redirect_to property_path(@property), notice: "Un Château à loué a été créé !"
       else
