@@ -14,7 +14,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-    @property.users_id = current_user
+    @property.user_id = current_user.id
     authorize @property
 
     if @property.save
