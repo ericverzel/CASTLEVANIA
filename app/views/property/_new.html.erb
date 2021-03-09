@@ -1,0 +1,10 @@
+<h1>Add one of your Property</h1>
+
+
+<%= simple_form_for @property do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
