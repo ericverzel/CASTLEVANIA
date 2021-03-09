@@ -12,13 +12,9 @@
   </head>
 
   <body>
-    <%= render 'property/new' %>
 
     <%= render 'shared/navbar' %>
 
-    <% if policy(Restaurant).create? %>
-      <%= link_to "New restaurant", new_restaurant_path %>
-    <% end %>
     <div class="container">
       <%= render 'shared/flashes' %>
       <p class="notice"><%= notice %></p>

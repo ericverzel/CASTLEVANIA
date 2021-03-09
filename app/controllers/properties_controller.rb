@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  authorize @restaurant
+
 
     def index
     end
@@ -14,7 +14,7 @@ class PropertiesController < ApplicationController
 
     def create
       @property = Property.new(property_params)
-      @property.user = current_user
+      @property.users_id = current_user
       authorize @property
 
       if @property.save
