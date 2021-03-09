@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users
   resources :properties do
-    resources :reservations, only [:create, :show]
+    resources :reservations, only: [:create, :show]
   end
 end
