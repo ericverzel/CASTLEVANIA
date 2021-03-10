@@ -1,0 +1,57 @@
+.login-cta {
+	position: fixed;
+    border-radius: 100px;
+    border:1px solid white;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+	position: absolute;
+	right: 0px;
+	top:20px !important;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 20px;
+    margin: 0;
+    padding: 14px 24px;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+    opacity: 0.8;
+	top:0px;
+    &:hover {
+        text-decoration: none;
+        opacity: 1;
+        color: white;
+    }
+}
+
+
+
+.btn-cta {
+    background-color: #fff;
+    border-radius: 100px;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #484848;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 20px;
+    margin: 0;
+    padding: 14px 24px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    width: auto;
+    opacity: 0.94;
+    &:hover {
+        text-decoration: none;
+        opacity: 1;
+        color: #F26322;
+    }
+}
