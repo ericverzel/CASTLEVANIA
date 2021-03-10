@@ -3,7 +3,7 @@
   <% @properties.each do |castle| %>
     <li>
       <h2><%= castle.name %></h2>
-        <p>location: <strong><%= castle.address %></strong></p>
+        <p>Adresse: <strong><%= castle.address %></strong></p>
         <p>photo: <strong><%= castle.photo%></strong></p>
         <p>price: <strong><%= castle.price%> €</strong></p>
         <p> <% castle.photos.each do |photo| %><%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %><% end %></strong></p>
