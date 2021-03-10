@@ -31,7 +31,7 @@ user1 = User.last
 5.times do
   properties = Property.new(
     name:  "Chateau #{Faker::Company.name}",
-    location: Faker::Address.full_address,
+    address: Faker::Address.full_address,
     price: Faker::Number.number(digits: 5),
     photo: "https://picsum.photos/1400/500",
     user_id: user1.id
