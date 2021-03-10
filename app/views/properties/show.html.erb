@@ -1,14 +1,19 @@
 <div class="container">
   <h1><%= @property.name  %> </h1>
-  <%= link_to "Back to all Castles", root_path %>
+
   <br>
 
-  <% @article.photos.each do |photo| %>
+  <% @property.photos.each do |photo| %>
     <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
 
   <h2>Price </h2>
-  <p><%= @property.price %></p>
+  <p><%= @property.price %>€</p>
   <h2>Location</h2>
   <p><%= @property.location %></p>
 </div>
+<br>
+
+<hr>
+
+<%= link_to "Back to all Castles", root_path %>
