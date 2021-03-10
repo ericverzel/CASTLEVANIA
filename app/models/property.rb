@@ -4,6 +4,6 @@ class Property < ApplicationRecord
   has_many_attached :photos
 
   validates :name, presence: true
-  validates :location, uniqueness: true
+  validates :address, uniqueness: true
   validates :price, presence: true
 end
