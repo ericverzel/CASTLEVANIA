@@ -1,5 +1,8 @@
-<h1>List of castles </h1>
-<ul>
+<div class="top-page">
+  <h1>List of castles </h1>
+</div>
+<div class="container mt-5">
+  <ul>
   <% @properties.each do |castle| %>
     <li>
       <h2><%= castle.name %></h2>
@@ -16,6 +19,6 @@
         </tr>
 
     </li>
-
   <% end %>
 </ul>
+</div>
