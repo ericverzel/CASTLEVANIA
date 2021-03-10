@@ -40,15 +40,45 @@ header {
     }
 }
 @media (pointer: coarse) and (hover: none) {
-    header {
-        background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-        video {
-            display: none;
-        }
-    }
+	header {
+		background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+		video {
+			display: none;
+		}
+	}
 }
 
-.logo-white {
-	width: 240px;
-	margin-top: -40px;
+.footer-logo {
+	width: 140px;
+	margin-bottom: 20px;
+}
+
+.icon-section {
+	width: 60px;
+}
+.btn-cta {
+	background-color: #fff;
+	border-radius: 8px;
+	border-width: 0;
+	box-sizing: border-box;
+	color: #484848;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: normal;
+	line-height: 20px;
+	margin: 0;
+	padding: 14px 24px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	touch-action: manipulation;
+	width: auto;
+	opacity: 0.94;
+	&:hover {
+		text-decoration: none;
+		opacity: 1;
+		color: #F26322;
+	}
 }
