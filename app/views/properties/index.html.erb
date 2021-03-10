@@ -1,13 +1,17 @@
-<h1>List of castles </h1>
-<ul>
+<div class="top-page">
+  <h1>List of castles </h1>
+</div>
+<div class="container mt-5">
+  <ul>
   <% @properties.each do |castle| %>
-        <li>
-            <h2><%= castle.name %></h2>
+        <li class="card card-grid d-flex">
+            <h2 class="mb-4"><%= castle.name %></h2>
             <p>location: <strong><%= castle.location %></strong></p>
             <p>photo: <strong><%= castle.photo%></strong></p>
             <p>price: <strong><%= castle.price%> €</strong></p>
-            <p> <% castle.photos.each do |photo| %><%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %><% end %></strong></p>
-            <%= link_to "Show me this place", "properties/#{castle.id}" %>
+            <p class="card-img-top"> <% castle.photos.each do |photo| %><%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %><% end %></strong></p>
+            <%= link_to "Show me this place", "properties/#{castle.id}", class:"button-card btn" %>
         </li>
   <% end %>
 </ul>
+</div>
