@@ -18,7 +18,13 @@
 
 <% if user_signed_in? %>
   <%= link_to "New reservation", "#{@property.id}/reservations/new" %>
-  <%= link_to "Update Castle", edit_property_path %>
 <% end %>
+
+<tr>
+<% if policy(@property).edit? %>
+  <td>| <%= link_to "Update Castle", edit_property_path(@property) %> |</td>
+  <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' } %> |</td>
+<% end %>
+</tr>
 
 <%= link_to "Back to all Castles", properties_path %>

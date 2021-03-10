@@ -1,16 +1,20 @@
 <h1>List of castles </h1>
 <ul>
   <% @properties.each do |castle| %>
-        <li>
-            <h2><%= castle.name %></h2>
-            <p>location: <strong><%= castle.location %></strong></p>
-            <p>photo: <strong><%= castle.photo%></strong></p>
-            <p>price: <strong><%= castle.price%> €</strong></p>
-            <p> <% castle.photos.each do |photo| %><%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %><% end %></strong></p>
-            <%= link_to "Show me this place", "properties/#{castle.id}" %>
-            <% if policy(castle).edit? %>
-              <%= link_to "Update", edit_property_path(castle) %>
-            <% end %>
-        </li>
+    <li>
+      <h2><%= castle.name %></h2>
+        <p>location: <strong><%= castle.location %></strong></p>
+        <p>photo: <strong><%= castle.photo%></strong></p>
+        <p>price: <strong><%= castle.price%> €</strong></p>
+        <p> <% castle.photos.each do |photo| %><%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %><% end %></strong></p>
+        <%= link_to "Show me this place", "properties/#{castle.id}" %>
+        <% if policy(castle).edit? %>
+        <tr>
+          <td>| <%= link_to "Update", edit_property_path(castle) %> |</td>
+          <td> <%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' } %>
+       <% end %></td>
+        </tr>
+
+    </li>
   <% end %>
 </ul>
