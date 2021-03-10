@@ -13,7 +13,7 @@
 
   <body>
 
-    <% if controller.controller_name == !"pages"  %>
+    <% if controller.controller_name != "pages"  %>
       <%= render 'shared/navbar' %>
     <% end %>
 
