@@ -22,7 +22,7 @@ class PropertiesController < ApplicationController
     authorize @property
 
     if @property.save
-      redirect_to property_path(@property), notice: "Un Château à loué a été créé !"
+      redirect_to property_path(@property), notice: "Un Château à louer a été créé !"
     else
       render :new
     end
