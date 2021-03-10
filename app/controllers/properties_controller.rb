@@ -8,6 +8,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    authorize @property
   end
 
   def new
