@@ -3,6 +3,10 @@
   <%= link_to "Back to all Castles", root_path %>
   <br>
 
+  <% @article.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+
   <h2>Price </h2>
   <p><%= @property.price %></p>
   <h2>Location</h2>

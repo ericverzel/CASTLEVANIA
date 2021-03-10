@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @properties = Property.all
@@ -38,6 +38,6 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:name, :location, :price)
+    params.require(:property).permit(:name, :location, :price, photos: [])
   end
 end
