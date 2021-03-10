@@ -12,7 +12,7 @@ Reservation.destroy_all if Rails.env.development?
 
 #FAKING USERS
 require 'faker'
-puts 'Creating 30 fake users...'
+puts 'Creating 5 fake users...'
 5.times do
   users = User.new(
     name:  Faker::Name.name,
@@ -26,7 +26,7 @@ puts 'Finished!'
 
 #FAKING CASTLES
 
-puts 'Creating 100 fake castles...'
+puts 'Creating 5 fake castles...'
 user1 = User.last
 5.times do
   properties = Property.new(
