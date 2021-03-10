@@ -4,8 +4,10 @@
     <source src="https://res.cloudinary.com/the-peacock/video/upload/v1615309539/castlevania/bg-castlevania.mp4" type="video/mp4">
   </video>
   <div class="container h-100">
+  <%= link_to "Login", properties_path, id: "login" %>
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
+        <%= image_tag 'logo-white', class:"logo-white" %>
         <h1 class="display-3">Make your dream comes true</h1>
         <p class="lead mb-0">Discover the best Castles to rent all around the world </p>
         <%= link_to "Discover our exclusive Castles", properties_path, class: "btn-cta mt-3" %>
@@ -14,9 +16,4 @@
   </div>
 </header>
 
-
-
-<% if user_signed_in? %>
-  <%= link_to "New property", new_property_path %>
-<% end %>
 
