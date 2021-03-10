@@ -18,6 +18,7 @@
 
 <% if user_signed_in? %>
   <%= link_to "New reservation", "#{@property.id}/reservations/new" %>
+  <%= link_to "Update Castle", edit_property_path %>
 <% end %>
 
 <%= link_to "Back to all Castles", properties_path %>
