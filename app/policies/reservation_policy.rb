@@ -6,6 +6,10 @@ class ReservationPolicy < ApplicationPolicy
     # - user:   the `current_user` signed in with Devise.
   end
 
+  def create?
+    true
+  end
+
   def show?
     record.user == user
   end

@@ -17,7 +17,7 @@
 <hr>
 
 <% if user_signed_in? %>
-  <%= link_to "New reservation", "properties/#{@property.id}/reservations/new" %>
+  <%= link_to "New reservation", "#{@property.id}/reservations/new" %>
 <% end %>
 
 <%= link_to "Back to all Castles", properties_path %>
