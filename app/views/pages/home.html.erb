@@ -7,11 +7,14 @@
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
         <h1 class="display-3">Make your dream comes true</h1>
-        <p class="lead mb-0">Discover the best <%= link_to "Castles", properties_path %> to rent all around the world </p>
+        <p class="lead mb-0">Discover the best Castles to rent all around the world </p>
+        <%= link_to "Discover our exclusive Castles", properties_path, class: "btn-cta mt-3" %>
       </div>
     </div>
   </div>
 </header>
+
+
 
 <% if user_signed_in? %>
   <%= link_to "New property", new_property_path %>
