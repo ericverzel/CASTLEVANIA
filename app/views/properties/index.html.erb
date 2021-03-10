@@ -1,0 +1,12 @@
+<h1>List of castles </h1>
+<ul>
+  <% @properties.each do |castle| %>
+        <li>
+            <h2><%= castle.name %></h2>
+            <p>location: <strong><%= castle.location %></strong></p>
+            <p>photo: <strong><%= castle.photo%></strong></p>
+            <p>price: <strong><%= castle.price%> €</strong></p>
+
+        </li>
+  <% end %>
+</ul>
