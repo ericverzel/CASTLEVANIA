@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   def index
     @properties = Property.all
@@ -7,7 +8,6 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @property = Property.find(params[:id])
     authorize @property
   end
 
@@ -29,9 +29,18 @@ class PropertiesController < ApplicationController
   end
 
   def edit
+    authorize @property
   end
+
   def update
+    authorize @property
+    if @property.update(property_params)
+      redirect_to @property, notice: 'Property was successfully updated.'
+    else
+      render :edit
+    end
   end
+
   def destroy
   end
 
@@ -39,5 +48,9 @@ class PropertiesController < ApplicationController
 
   def property_params
     params.require(:property).permit(:name, :location, :price, photos: [])
+  end
+
+  def set_property
+    @property = Property.find(params[:id])
   end
 end
