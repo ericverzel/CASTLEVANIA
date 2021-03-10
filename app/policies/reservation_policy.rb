@@ -1,21 +1,4 @@
-class PropertyPolicy < ApplicationPolicy
-  class Scope < Scope
-    def resolve
-      scope.all
-    end
-  end
-
-  def index?
-    return true
-  end
-
-  def show?
-    true
-  end
-
-  def create?
-    return true
-  end
+class ReservationPolicy < ApplicationPolicy
 
   def update?
     record.user == user
@@ -23,7 +6,17 @@ class PropertyPolicy < ApplicationPolicy
     # - user:   the `current_user` signed in with Devise.
   end
 
+  def show?
+    record.user == user
+  end
+
   def destroy?
     record.user == user
+  end
+
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
   end
 end

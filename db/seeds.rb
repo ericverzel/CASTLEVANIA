@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Property.destroy_all
-Reservation.destroy_all
+User.destroy_all if Rails.env.development?
+Property.destroy_all if Rails.env.development?
+Reservation.destroy_all if Rails.env.development?
 
 #FAKING USERS
 require 'faker'
 puts 'Creating 30 fake users...'
-30.times do
+5.times do
   users = User.new(
     name:  Faker::Name.name,
     email: Faker::Internet.email,
@@ -25,17 +25,17 @@ puts 'Finished!'
 
 
 #FAKING CASTLES
-=begin
+
 puts 'Creating 100 fake castles...'
-100.times do
+user1 = User.last
+5.times do
   properties = Property.new(
     name:  "Chateau #{Faker::Company.name}",
     location: Faker::Address.full_address,
     price: Faker::Number.number(digits: 5),
     photo: "https://picsum.photos/1400/500",
-    users_id: 3
+    user_id: user1.id
   )
   properties.save!
 end
 puts 'Finished!'
-=end
