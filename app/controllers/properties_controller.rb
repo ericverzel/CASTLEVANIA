@@ -1,12 +1,14 @@
 class PropertiesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   def index
     @properties = Property.all
+    @properties = policy_scope(Property).order(created_at: :desc)
   end
 
   def show
-    @property = Property.find(params[:id])
+    authorize @property
   end
 
   def new
@@ -27,15 +29,31 @@ class PropertiesController < ApplicationController
   end
 
   def edit
+    authorize @property
   end
+
   def update
+    authorize @property
+    if @property.update(property_params)
+      redirect_to @property, notice: 'Property was successfully updated.'
+    else
+      render :edit
+    end
   end
+
   def destroy
+    authorize @property
+    @property.destroy
+    redirect_to properties_url, notice: 'Property was successfully destroyed.'
   end
 
   private
 
   def property_params
-    params.require(:property).permit(:name, :location, :price)
+    params.require(:property).permit(:name, :address, :price, photos: [])
+  end
+
+  def set_property
+    @property = Property.find(params[:id])
   end
 end

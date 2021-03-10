@@ -1,0 +1,9 @@
+<h1>Make a reservation !</h1>
+
+
+<%= simple_form_for [ @property, @reservation ] do |f| %>
+  <%= f.input :date_from %>
+  <%= f.input :date_to %>
+  <%= f.submit %>
+<% end %>
+

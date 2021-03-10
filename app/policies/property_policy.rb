@@ -5,11 +5,20 @@ class PropertyPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    return true
+  end
+
+  def show?
+    true
+  end
+
   def create?
     return true
   end
 
   def update?
+    # true
     record.user == user
     # - record: the restaurant passed to the `authorize` method in controller
     # - user:   the `current_user` signed in with Devise.

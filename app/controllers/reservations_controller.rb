@@ -1,16 +1,60 @@
 class ReservationsController < ApplicationController
-    def index
+  before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  before_action :set_property, only: [:new, :create]
+
+  # GET /property/:property_id/reservations
+  def index
+    @property = Property.includes(:reservations).find(params[:property_id])
+    @reservations = @Property.reservations.all
+    authorize @reservation
+  end
+
+  def show
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
+  end
+
+  # GET /propertys/:property_id/reservations/new
+  def new
+    @reservation = Reservation.new
+    authorize @reservation
+  end
+
+
+  def create
+    @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
+    @reservation.property = @property
+    authorize @reservation
+
+    if @reservation.save
+      redirect_to property_reservation_path(@property, @reservation), notice: "Une Réservation à été faite !"
+    else
+      render :new
     end
-    def show
+  end
+
+  def edit
+  end
+  def update
+  end
+  def destroy
+  end
+
+
+  private
+
+    def set_reservation
+      @reservation = Reservation.find(params[:id])
     end
-    def new
+
+
+    def set_property
+      # @property = Property.where(id: params[:id], user: current_user).take
+      @property = Property.find(params[:property_id])
     end
-    def create
-    end
-    def edit
-    end
-    def update
-    end
-    def destroy
+
+    def reservation_params
+      params.require(:reservation).permit(:date_from, :date_to)
     end
 end

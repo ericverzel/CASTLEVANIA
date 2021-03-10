@@ -1,10 +1,30 @@
 <div class="container">
   <h1><%= @property.name  %> </h1>
-  <%= link_to "Back to all Castles", root_path %>
+
   <br>
 
+  <% @property.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+
   <h2>Price </h2>
-  <p><%= @property.price %></p>
-  <h2>Location</h2>
-  <p><%= @property.location %></p>
+  <p><%= @property.price %>€</p>
+  <h2>address</h2>
+  <p><%= @property.address %></p>
 </div>
+<br>
+
+<hr>
+
+<% if user_signed_in? %>
+  <%= link_to "New reservation", "#{@property.id}/reservations/new" %>
+<% end %>
+
+<tr>
+<% if policy(@property).edit? %>
+  <td>| <%= link_to "Update Castle", edit_property_path(@property) %> |</td>
+  <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' } %> |</td>
+<% end %>
+</tr>
+
+<%= link_to "Back to all Castles", properties_path %>
