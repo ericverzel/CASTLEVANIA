@@ -36,6 +36,6 @@ user1 = User.last
     photo: "https://picsum.photos/1400/500",
     user_id: user1.id
   )
-  properties.save!
+ properties.save!
 end
 puts 'Finished!'
