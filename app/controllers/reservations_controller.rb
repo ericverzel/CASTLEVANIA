@@ -37,8 +37,16 @@ class ReservationsController < ApplicationController
   def edit
     authorize @reservation
   end
+
   def update
+    authorize @reservation
+    if @reservation.update(reservation_params)
+      redirect_to @reservation, notice: 'Reservation was successfully updated.'
+    else
+      render :edit
+    end
   end
+
   def destroy
   end
 
