@@ -35,6 +35,7 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    authorize @reservation
   end
   def update
   end
