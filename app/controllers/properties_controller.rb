@@ -5,6 +5,15 @@ class PropertiesController < ApplicationController
   def index
     @properties = Property.all
     @properties = policy_scope(Property).order(created_at: :desc)
+
+    @markers = @properties.geocoded.map do |prop|
+      {
+        lat: prop.latitude,
+        lng: prop.longitude
+      }
+    end
+
+
   end
 
   def show

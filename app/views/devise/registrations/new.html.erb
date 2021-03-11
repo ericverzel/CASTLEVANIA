@@ -1,7 +1,8 @@
-<div class="container sign-up shadow-lg">
-<h2>Create an account</h2>
+<div class="container-fluid signup-wrapper">
+  <div class="container sign-up shadow-lg">
+  <h2>Create an account</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

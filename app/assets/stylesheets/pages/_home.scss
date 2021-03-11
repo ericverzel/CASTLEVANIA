@@ -34,8 +34,7 @@ header {
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: black;
-        opacity: 0.5;
+        background-color: rgba(0, 0, 0, 0.514);
         z-index: 1;
     }
 }
@@ -57,11 +56,11 @@ header {
 	width: 60px;
 }
 .btn-cta {
-	background-color: #fff;
+	background-color: rgb(255, 255, 255);
 	border-radius: 8px;
 	border-width: 0;
 	box-sizing: border-box;
-	color: #484848;
+	color: #F26322 !important;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
@@ -69,16 +68,28 @@ header {
 	letter-spacing: normal;
 	line-height: 20px;
 	margin: 0;
-	padding: 14px 24px;
+	padding: 14px 34px !important;
 	position: relative;
 	text-align: center;
 	text-decoration: none;
 	touch-action: manipulation;
 	width: auto;
-	opacity: 0.94;
+	opacity: 1;
 	&:hover {
 		text-decoration: none;
-		opacity: 1;
-		color: #F26322;
+		opacity: 0.94;
+		color: #ff8f5c;
 	}
+}
+
+.hero-logo {
+	width: 250px;
+}
+
+.castle-pattern {
+	background-image: url(https://res.cloudinary.com/the-peacock/image/upload/v1615462438/pattern.svg) !important;
+	background-position: 50% 100%;
+	background-repeat: no-repeat no-repeat;
+	background-size: 100vw;
+	box-sizing: border-box;	
 }
