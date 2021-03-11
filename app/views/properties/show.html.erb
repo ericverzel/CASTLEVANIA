@@ -14,8 +14,12 @@
   <%= link_to "New reservation", "#{@property.id}/reservations/new" %>
 <% end %>
 
+<% unless @property.reservations.empty? %>
+  <tr>| <%= link_to 'Show my resa', property_reservation_path(@property, @property.reservations.where(user: current_user).first) %></tr>
+<% end  %>
 
-<tr>| <%= link_to 'Show my reservation', [ @property, @reservation ] %></tr>
+<!-- property_reservation_path(@reservation.property, @reservation ]) -->
+<!-- "#{@property.id}/reservations/#{@reservations.id}/#{@reservation}"  -->
 
 
 <tr>
