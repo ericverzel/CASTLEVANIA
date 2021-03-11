@@ -12,6 +12,7 @@
 
 <% if user_signed_in? %>
   <%= link_to "New reservation", "#{@property.id}/reservations/new" %>
+  <%= link_to "Change my reservation", "#{@property.reservation.id}/reservations/new" %>
 <% end %>
 
 <tr>
