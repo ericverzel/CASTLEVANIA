@@ -56,20 +56,3 @@
     }
 }
 
-.button-card {
-    color:white;
-    font-weight: bold;
-    width: auto;
-    max-width: 300px;
-    border: 1px solid lightgrey;
-    border-radius: 100px;
-    background-color: #F26322;
-    padding: 10px 7px;
-    text-align: center;
-    opacity: 0.9;
-    &:hover {
-        text-decoration: none;
-        opacity: 1;
-        color: green !important;
-    }
-}
