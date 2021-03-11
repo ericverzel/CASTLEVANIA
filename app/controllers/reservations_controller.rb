@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
-  before_action :set_property, only: [:new, :create]
+  before_action :set_property, only: [:new, :create, :show, :edit, :update, :destroy]
 
   # GET /property/:property_id/reservations
   def index
@@ -35,10 +35,23 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
   end
+
   def update
+    authorize @reservation
+    if @reservation.update(reservation_params)
+      redirect_to property_reservation_path(@reservation.property, @reservation), notice: 'Reservation was successfully updated.'
+    else
+      render :edit
+    end
   end
+
   def destroy
+    authorize @reservation
+    @reservation.destroy
+    redirect_to properties_url, notice: 'Reservation was successfully destroyed.'
   end
 
 
