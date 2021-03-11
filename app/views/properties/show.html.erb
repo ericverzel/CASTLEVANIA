@@ -14,13 +14,18 @@
   <%= link_to "New reservation", "#{@property.id}/reservations/new" %>
 <% end %>
 
+
+<tr>| <%= link_to 'Show my reservation', [ @property, @reservation ] %></tr>
+
+
 <tr>
 <% if policy(@property).edit? %>
   <td>| <%= link_to "Update Castle", edit_property_path(@property) %> |</td>
-  <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' } %> |</td>
-  <td><%= link_to "Change my reservation",  edit_property_reservation_path([ @property, @reservation ]) %></td>
+  <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 </tr>
+
+
 
 <div class="back-to">
   <%= image_tag("back")%>

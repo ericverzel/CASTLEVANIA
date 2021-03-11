@@ -8,9 +8,11 @@
 
 <tr>
   <% if policy(@reservation).edit? %>
-  <td><%= link_to "Change my reservation",  edit_property_reservation_path([ @property, @reservation ]) %></td>
+  <td><%= link_to "Change my reservation",  edit_property_reservation_path([ @property, @reservation ]) %> |</td>
+  <td><%= link_to 'Destroy', [ @reservation.property, @reservation ], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
 </tr>
+
 
 <div class="back-to">
   <%= image_tag("back")%>
