@@ -1,0 +1,18 @@
+<h1>Your reservation for <%= @reservation.property.name %></h1>
+<h2>You have demanded a reservation going from:</h2>
+
+<p> <%= @reservation.date_from %> </p>
+<p>until the:</p>
+<p> <%=  @reservation.date_to %> </p>
+
+
+<tr>
+  <% if policy(@reservation).edit? %>
+  <td><%= link_to "Change my reservation",  edit_property_reservation_path([ @property, @reservation ]) %></td>
+  <% end %>
+</tr>
+
+<div class="back-to">
+  <%= image_tag("back")%>
+  <%= link_to "Back to all Castles", properties_path, style:'back-to-link' %>
+</div>

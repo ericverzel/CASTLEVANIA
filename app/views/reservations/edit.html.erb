@@ -1,22 +1,8 @@
 <h1>Editing Your Reservation Informations</h1>
 
-<%= simple_form_for [ @property, @reservation ] do |f| %>
-<% if reservation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
 
-      <ul>
-        <% reservation.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= f.input :date_from %>
-  <%= f.input :date_to %>
-  <%= f.submit %>
-<% end %>
+<%= render 'form', reservation: @reservation, preoperty: @reservation.property %>
 
 
 
-<%= link_to 'Show', [ @property, @reservation ] %> |
+<%= link_to 'Show', [ @reservation.property, @reservation ] %> |

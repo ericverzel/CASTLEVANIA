@@ -35,13 +35,14 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    @reservation = Reservation.find(params[:id])
     authorize @reservation
   end
 
   def update
     authorize @reservation
     if @reservation.update(reservation_params)
-      redirect_to @reservation, notice: 'Reservation was successfully updated.'
+      redirect_to property_reservation_path(@reservation.property, @reservation), notice: 'Reservation was successfully updated.'
     else
       render :edit
     end
