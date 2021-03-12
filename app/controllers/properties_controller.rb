@@ -14,8 +14,6 @@ class PropertiesController < ApplicationController
 
       }
     end
-
-
   end
 
   def show
@@ -31,7 +29,6 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     @property.user_id = current_user.id
     authorize @property
-
     if @property.save
       redirect_to property_path(@property), notice: "Un Château à louer a été créé !"
     else

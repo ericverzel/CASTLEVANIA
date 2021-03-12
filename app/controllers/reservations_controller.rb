@@ -10,8 +10,6 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    # @reservation.user_id = current_user.id
-    # @reservation.property = @property
     authorize @reservation
   end
 

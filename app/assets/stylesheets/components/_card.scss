@@ -1,0 +1,27 @@
+
+.card-grid {
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 0px solid black;
+    width: 100%;
+    &:hover {
+        box-shadow: rgba(0,0,0,.18) 1px 1px 6px 0;
+    }
+}
+.button-card {
+    color:white;
+    font-weight: bold;
+    width: auto;
+    max-width: 300px;
+    border: 1px solid lightgrey;
+    border-radius: 100px;
+    background-color: #F26322;
+    padding: 10px 7px;
+    text-align: center;
+    opacity: 0.9;
+}
+.button-card:hover {
+    text-decoration: none;
+    color: lightgrey;
+}

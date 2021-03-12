@@ -1,37 +1,35 @@
-<div class="img-castle">
+<div class="img-castle text-center">
   <% @property.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag photo.key, height: 320, width: 460, crop: :fill %>
   <% end %>
 </div>
-<div class="container p-3 mb-5 bg-white custom-container shadow-sm">
+<div class="container p-3 mb-5 bg-white custom-container shadow-sm text-center">
   <h1><%= @property.name  %> </h1>
   <p><%= @property.address %></p>
   <p class="price-tag"><%= @property.price %>€</p>
 </div>
 
+<div class="links">
+  <% if user_signed_in? %>
+    <%= link_to "New reservation", "#{@property.id}/reservations/new" %>
+  <% end %>
 
-<% if user_signed_in? %>
-  <%= link_to "New reservation", "#{@property.id}/reservations/new" %>
-<% end %>
+  <% unless @property.reservations.empty? %>
+    <tr>| <%= link_to 'Show my resa', property_reservation_path(@property, @property.reservations.where(user: current_user).first) %></tr>
+  <% end  %>
 
-<% unless @property.reservations.empty? %>
-  <tr>| <%= link_to 'Show my resa', property_reservation_path(@property, @property.reservations.where(user: current_user).first) %></tr>
-<% end  %>
-
-<!-- property_reservation_path(@reservation.property, @reservation ]) -->
-<!-- "#{@property.id}/reservations/#{@reservations.id}/#{@reservation}"  -->
-
-
-<tr>
-<% if policy(@property).edit? %>
-  <td>| <%= link_to "Update Castle", edit_property_path(@property) %> |</td>
-  <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<% end %>
-</tr>
+  <tr>
+  <% if policy(@property).edit? %>
+    <td>| <%= link_to "Update Castle", edit_property_path(@property) %> |</td>
+    <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+  </tr>
 
 
-
-<div class="back-to">
-  <%= image_tag("back.png")%>
-  <%= link_to "Back to all Castles", properties_path, style:'back-to-link' %>
+  <div class="back-to">
+    <%= image_tag("back.png")%>
+    <%= link_to "Back to all Castles", properties_path, style:'back-to-link' %>
+  </div>
 </div>
+
+

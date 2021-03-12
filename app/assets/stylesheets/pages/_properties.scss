@@ -1,3 +1,4 @@
+
 .top-page {
     background-color: #5c4646;
     background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(https://uploads-ssl.webflow.com/5ff5f43f09c4f34c9c325e38/6048d40bfb2864da3f7d4e36_toppage.jpg);
@@ -14,31 +15,4 @@
     justify-content: center;
     align-items: center;
     margin-top: -30px;
-}
-
-.card-grid {
-    display: grid;
-    padding: 30px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    border: 0px solid black;
-    &:hover {
-        box-shadow: rgba(0,0,0,.18) 1px 1px 6px 0;
-    }
-}
-.button-card {
-    color:white;
-    font-weight: bold;
-    width: auto;
-    max-width: 300px;
-    border: 1px solid lightgrey;
-    border-radius: 100px;
-    background-color: #F26322;
-    padding: 10px 7px;
-    text-align: center;
-    opacity: 0.9;
-}
-.button-card:hover {
-    text-decoration: none;
-    color: lightgrey;
 }
