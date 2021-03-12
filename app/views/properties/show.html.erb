@@ -1,6 +1,6 @@
 <section>
   <div class="container-fluid">
-    <div class="img-castle text-center">
+    <div>
   <% @property.photos.each do |photo| %>
     <%= cl_image_tag photo.key, height: 320, width: 460, crop: :fill %>
   <% end %>
