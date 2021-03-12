@@ -18,17 +18,12 @@
   <tr>| <%= link_to 'Show my resa', property_reservation_path(@property, @property.reservations.where(user: current_user).first) %></tr>
 <% end  %>
 
-<!-- property_reservation_path(@reservation.property, @reservation ]) -->
-<!-- "#{@property.id}/reservations/#{@reservations.id}/#{@reservation}"  -->
-
-
 <tr>
 <% if policy(@property).edit? %>
   <td>| <%= link_to "Update Castle", edit_property_path(@property) %> |</td>
   <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 </tr>
-
 
 
 <div class="back-to">

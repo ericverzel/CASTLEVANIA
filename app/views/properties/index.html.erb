@@ -36,10 +36,7 @@
           <li class="card card-grid">
             <h2><%= castle.name %></h2>
               <p>Adresse: <strong><%= castle.address %></strong></p>
-              <p>photo: <strong><%= castle.photo%></strong></p>
               <p>price: <strong><%= castle.price%> €</strong></p>
-              <p>lat: <strong><%= castle.latitude %></strong></p>
-              <p>long: <strong><%= castle.longitude%></strong></p>
               <p> <% castle.photos.each do |photo| %><%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %><% end %></strong></p>
               <%= link_to "Show me this place", "properties/#{castle.id}", class:"button-card" %>
               <% if policy(castle).edit? %>
