@@ -25,10 +25,12 @@ body {
 
 .back-to {
     position: fixed;
+    z-index: 1000;
     bottom: 20px;
     left: 20px;
     border-radius: 100px;
-    background-color: white;
+    background-color:white;
+    box-shadow: 10px 5px 5px lightgrey;
     padding: 10px;
     padding-right: 20px;
     &:hover{
@@ -85,3 +87,6 @@ body > div.back-to > a {
   border-radius: 5px;
 }
 
+.back-to-link {
+  color: black;
+}
