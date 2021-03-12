@@ -1,18 +1,24 @@
-<h1>Your reservation for <%= @reservation.property.name %></h1>
-<h2>You have demanded a reservation going from:</h2>
 
-<p> <%= @reservation.date_from %> </p>
-<p>until the:</p>
-<p> <%=  @reservation.date_to %> </p>
+<div class="text-center middle">
+  <h1 id="reservation-title">Your reservation for <%= @reservation.property.name %></h1>
+  <h2>You have demanded a reservation going from the:</h2>
+
+  <p class="dates"> <%= @reservation.date_from %> </p>
+  <p>until the:</p>
+  <p class="dates"> <%=  @reservation.date_to %> </p>
+  <p>Thanks you for reserving with Castlevania</p>
+</div>
 
 
-<tr>
-  <% if policy(@reservation).edit? %>
-  <td><%= link_to "Change my reservation",  edit_property_reservation_path([ @property, @reservation ]) %> |</td>
-  <td><%= link_to 'Destroy', [ @reservation.property, @reservation ], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <% end %>
-</tr>
 
+<div class="links">
+  <tr>
+    <% if policy(@reservation).edit? %>
+    <td><%= link_to "Change my reservation",  edit_property_reservation_path([ @property, @reservation ]) %> |</td>
+    <td><%= link_to 'Destroy', [ @reservation.property, @reservation ], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+</div>
 
 <div class="back-to">
   <%= image_tag("back.png")%>
