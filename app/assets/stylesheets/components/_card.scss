@@ -1,10 +1,10 @@
 
 .card-grid {
-    display: grid;
     padding: 30px;
     margin-bottom: 20px;
     border-radius: 15px;
     border: 0px solid black;
+    width: 100%;
     &:hover {
         box-shadow: rgba(0,0,0,.18) 1px 1px 6px 0;
     }
