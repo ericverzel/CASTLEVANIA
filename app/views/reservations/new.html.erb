@@ -1,9 +1,9 @@
-<h1>Make a reservation !</h1>
+<div class="castlevania-form">
+  <h1>Make a reservation !</h1>
 
-
-<%= simple_form_for [ @property, @reservation ] do |f| %>
-  <%= f.input :date_from %>
-  <%= f.input :date_to %>
-  <%= f.submit %>
-<% end %>
-
+  <%= simple_form_for [ @property, @reservation ] do |f| %>
+    <%= f.input :date_from %>
+    <%= f.input :date_to %>
+    <%= f.submit :class => 'btn-lg btn btn-primary btn-block mb-3' %>
+  <% end %>
+</div>
