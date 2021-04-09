@@ -21,7 +21,7 @@
 .btn-lg {
   background-color: #c15522f7;
   cursor: pointer;
-  border: 1px solid #ad410e;;
+  border: 1px solid #ad410e;
   border-radius: 25px;
   width: 170px;
   margin: 30px auto;
@@ -40,19 +40,36 @@ input.btn-block[type="submit"] {
 
 // 6 charcters minimum
 .form-text.text-muted {
-    color: #c15522 !important;
+  color: #c15522 !important;
 }
 
 // Links to Log In or Register
 .castlevania-form > a {
-    color: #c15522;
-    text-decoration: none;
-    background-color: transparent;
+  color: #c15522;
+  text-decoration: none;
+  background-color: transparent;
 }
 
 .castlevania-form > a:hover {
   color: #ad410e;
   font-size: larger;
+}
+
+// Adding a property form
+.form-control-file {
+  font-style: italic;
+}
+
+.btn-file {
+  background-color: #c15522f7;
+  border-radius: 5px;
+  border: 1px solid #ad410e;
+}
+
+.btn-file:hover {
+  background-color: #ad410e;
+  border: 1px solid #ad410e;
+  font-size: large;
 }
 
 

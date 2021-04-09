@@ -5,8 +5,14 @@
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :price %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit %>
+
+    <label class="btn btn-primary btn-file">
+      Add some photos ❤️
+      <span style="display:none;">
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      </span>
+    </label>
+    <%= f.submit :class => 'btn btn-primary btn-lg btn-block mb-3' %>
   <% end %>
 </div>
 
