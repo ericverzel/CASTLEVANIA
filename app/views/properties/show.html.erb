@@ -13,17 +13,17 @@
 
 <div class="links">
   <% if user_signed_in? %>
-    <%= link_to "New reservation", "#{@property.id}/reservations/new" %>
+    <%= link_to "New reservation", "#{@property.id}/reservations/new", class: :link %>
   <% end %>
 
   <% unless @property.reservations.empty? %>
-    <tr>| <%= link_to 'Show my resa', property_reservation_path(@property, @property.reservations.where(user: current_user).first) %></tr>
+    <tr>| <%= link_to 'Show my resa', property_reservation_path(@property, @property.reservations.where(user: current_user).first), class: :link %></tr>
   <% end  %>
 
   <tr>
   <% if policy(@property).edit? %>
-    <td>| <%= link_to "Update Castle", edit_property_path(@property) %> |</td>
-    <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>| <%= link_to "Update Castle", edit_property_path(@property), class: :link %> |</td>
+    <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' }, class: :link %></td>
   <% end %>
   </tr>
 

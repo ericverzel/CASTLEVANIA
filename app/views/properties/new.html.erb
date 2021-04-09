@@ -1,11 +1,14 @@
-<h1>Add one of your Properties</h1>
+<div class="castlevania-form">
+  <h1>Add one of your Properties</h1>
+
+  <%= simple_form_for @property do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :price %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit %>
+  <% end %>
+</div>
 
 
-<%= simple_form_for @property do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-<% end %>
 
