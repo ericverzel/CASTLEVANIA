@@ -42,8 +42,8 @@
               <%= link_to "Show me this place", "properties/#{castle.id}", class:"button-card" %>
               <% if policy(castle).edit? %>
               <tr>
-                <td><%= link_to "Update", edit_property_path(castle) %></td>
-                <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to "Update", edit_property_path(castle), class: :link %></td>
+                <td><%= link_to 'Destroy', @property, method: :delete, data: { confirm: 'Are you sure?' }, class: :link %></td>
             <% end %>
               </tr>
           </li>

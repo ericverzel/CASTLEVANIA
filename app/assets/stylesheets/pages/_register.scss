@@ -1,7 +1,7 @@
 // var nice-orange = #e67e22, #f07338 #c15522 #f07338cc;
 
-// Sign UP & REgister Form
-.sign-up {
+// Sign UP & Register Form
+.castlevania-form {
   min-width: 30vw !important;
   max-width: 500px;
   background-color: white;
@@ -45,13 +45,13 @@ input.btn-block[type="submit"] {
 }
 
 // Links to Log In or Register
-.sign-up > a {
+.castlevania-form > a {
     color: #c15522;
     text-decoration: none;
     background-color: transparent;
 }
 
-.sign-up > a:hover {
+.castlevania-form > a:hover {
   color: #ad410e;
   font-size: larger;
 }
